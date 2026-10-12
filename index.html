@@ -38,6 +38,17 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
         .brand-title {
             font-size: 1.1rem;
             font-weight: bold;
@@ -48,12 +59,13 @@
         }
         main {
             padding-top: 120px;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
             padding-bottom: 4rem;
         }
+        /* Tarjeta de introducción */
         .intro-box {
             background: rgba(3, 7, 18, 0.8);
             backdrop-filter: blur(16px);
@@ -62,6 +74,7 @@
             border-radius: 20px;
             padding: 2.5rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            margin-bottom: 3rem;
         }
         h1 {
             font-size: 2.5rem;
@@ -81,6 +94,69 @@
         .intro-box p:last-child {
             margin-bottom: 0;
         }
+
+        /* Disposición de las 15 imágenes en cuadrícula responsiva */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contenedor que respeta la proporción natural sin deformar */
+        .card-img-wrapper {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
     </style>
 </head>
 <body>
@@ -89,10 +165,14 @@
     <div id="vanta-bg"></div>
 
     <header>
-        <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
+        <div class="logo-container">
+            <img src="logo.jpg.jpg" alt="Núcleo Sonoro Logo">
+            <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
+        </div>
     </header>
 
     <main>
+        <!-- Introducción Corporativa -->
         <div class="intro-box">
             <h1>Inteligencia Artificial de <span>Alto Impacto</span></h1>
             
@@ -102,7 +182,151 @@
             
             <p>Al frente de nuestras capacidades de IA se encuentra Lucy, nuestra asistente virtual de última generación desarrollada para operar por voz y texto las 24 horas del día, los 7 días de la semana. Lucy no solo responde consultas y gestiona agendas en tiempo real a través de WhatsApp y canales telefónicos, sino que centraliza flujos de trabajo completos, liberando tiempo valioso para los equipos de trabajo y garantizando una atención fluida y sin fricciones.</p>
         </div>
+
+        <!-- Cuadrícula con las 15 piezas gráficas -->
+        <div class="gallery-grid">
+
+            <!-- 01 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="01 CARLOS CON POCILLO.jpg.jpg" alt="Historias que Suenan y se Ven">
+                </div>
+                <h3>Historias que Suenan y se Ven</h3>
+                <p>Visión estratégica y dirección creativa enfocada en conectar la tecnología con resultados tangibles para tu negocio.</p>
+            </div>
+
+            <!-- 02 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="02 AGENTES DE IA GRAFICO.jpg.jpg" alt="Agentes de IA: Decisiones y Acciones">
+                </div>
+                <h3>Agentes de IA: Decisiones y Acciones</h3>
+                <p>Sistemas inteligentes autónomos diseñados para procesar información, tomar decisiones y ejecutar tareas complejas con precisión.</p>
+            </div>
+
+            <!-- 03 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="03 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg.jpg" alt="Automatización Médica Inteligente">
+                </div>
+                <h3>Automatización Médica Inteligente</h3>
+                <p>Optimización de agendas clínicas conectadas directamente con Google Calendar, eliminando tareas repetitivas y reduciendo el ausentismo.</p>
+            </div>
+
+            <!-- 04 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="04 EDITOR DE VIDEO DE ESPALDAS.jpg.jpg" alt="Producción y Edición de Vanguardia">
+                </div>
+                <h3>Producción y Edición de Vanguardia</h3>
+                <p>Espacios creativos de alta gama donde la mezcla de audio, el diseño visual y la estrategia convergen en producciones profesionales.</p>
+            </div>
+
+            <!-- 05 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg" alt="Agentes de IA en Acción">
+                </div>
+                <h3>Agentes de IA en Acción</h3>
+                <p>Tecnología integrada al servicio de la salud para analizar solicitudes, consultar disponibilidad y confirmar citas automáticamente.</p>
+            </div>
+
+            <!-- 06 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="06 AGENDA EN ESTUDIO.jpg.jpg" alt="Ideas, Sonido, Imagen y Resultados">
+                </div>
+                <h3>Ideas, Sonido, Imagen y Resultados</h3>
+                <p>El núcleo operativo donde conceptualizamos y damos forma a las herramientas digitales que impulsan tu marca.</p>
+            </div>
+
+            <!-- 07 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="07 ASISTENTES VIRTUALES CON ODONTOLOGA.jpg.jpg" alt="Tu Equipo Digital 24/7">
+                </div>
+                <h3>Tu Equipo Digital 24/7</h3>
+                <p>Asistentes virtuales amigables que atienden pacientes en voz y texto, orientando en tratamientos y mejorando la experiencia global.</p>
+            </div>
+
+            <!-- 08 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="08 NUCLEO GOOGLE BUSINESS PROFILE EN CELULAR.jpg.jpg" alt="Posicionamiento Google Business Profile">
+                </div>
+                <h3>Posicionamiento Google Business Profile</h3>
+                <p>Estrategias locales optimizadas para destacar en mapas, capturar la atención de nuevos clientes y disparar las llamadas directas.</p>
+            </div>
+
+            <!-- 09 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="09 FLUJOS Y AUTOMATIZACIONES GRAFICO.jpg.jpg" alt="Procesos Inteligentes Escalables">
+                </div>
+                <h3>Procesos Inteligentes Escalables</h3>
+                <p>Diagramas de flujo automatizados que integran herramientas, ejecutan acciones en segundos y generan reportes de rendimiento.</p>
+            </div>
+
+            <!-- 10 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="010 LANDINGS CARGA RAPIDA EN COMPUTADOR.jpg.jpg" alt="Fast Landing Pages de Alta Conversión">
+                </div>
+                <h3>Fast Landing Pages de Alta Conversión</h3>
+                <p>Diseños responsivos ultrarrápidos con integración directa a WhatsApp, diseñados para convertir visitantes en clientes en menos de un segundo.</p>
+            </div>
+
+            <!-- 11 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="011 LUCY ABSTARCTA.jpg.jpg" alt="Lucy: El Núcleo de la Conversación IA">
+                </div>
+                <h3>Lucy: El Núcleo de la Conversación IA</h3>
+                <p>Inteligencia artificial conversacional abstracta y dinámica, conectada omnicanalmente para la gestión automatizada de tu agenda.</p>
+            </div>
+
+            <!-- 12 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="012 ASISTENTES VIRTUALES COMPUTADOR.jpg.jpg" alt="Coordinación y Acompañamiento Digital">
+                </div>
+                <h3>Coordinación y Acompañamiento Digital</h3>
+                <p>Plataformas de gestión de mensajes y agendamiento sincronizadas para mantener tu operación activa y organizada sin interrupciones.</p>
+            </div>
+
+            <!-- 13 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="013 LUCY EN EL CELULAR.jpg.jpg" alt="Lucy en Entornos Móviles">
+                </div>
+                <h3>Lucy en Entornos Móviles</h3>
+                <p>Interacciones móviles fluidas mediante notas de voz y chat interactivo para confirmar citas y agilizar la comunicación con tus usuarios.</p>
+            </div>
+
+            <!-- 14 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="014 IA CONVERSACIONAL CELULAR.jpg.jpg" alt="Conversaciones Naturales por Voz y Texto">
+                </div>
+                <h3>Conversaciones Naturales por Voz y Texto</h3>
+                <p>Experiencias hiperpersonalizadas donde la voz interactúa de manera orgánica para resolver las necesidades del cliente al instante.</p>
+            </div>
+
+            <!-- 15 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="015 IA CONVERSACIONAL CON DOCTORA.jpg.jpg" alt="La Voz de tus Pacientes Siempre Atendida">
+                </div>
+                <h3>La Voz de tus Pacientes Siempre Atendida</h3>
+                <p>Asistencia médica especializada vía WhatsApp y llamadas de voz, garantizando que ningún paciente se quede sin respuesta.</p>
+            </div>
+
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Núcleo Sonoro Estudio IA. Bogotá, Colombia. Cita previa vía WhatsApp (+57 314 405 2859).</p>
+    </footer>
 
     <!-- Scripts de Three.js y Vanta.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
