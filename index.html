@@ -3,235 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Núcleo Sonoro Estudio IA</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>NÚCLEO SONORO - ESTUDIO IA</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: system-ui, -apple-system, sans-serif;
-            color: #f3f4f6;
-            background-color: transparent;
-            scroll-behavior: smooth;
+            box-sizing: border-box;
         }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            background-color: #8eabcc;
+            overflow-x: hidden;
+        }
+        /* Contenedor principal de Vanta */
         #vanta-background {
             position: fixed;
-            width: 100vw;
-            height: 100vh;
             top: 0;
             left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
         }
-        .glass-card {
-            background: rgba(10, 14, 20, 0.88);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .text-shadow-strong {
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        .image-box {
-            background: rgba(5, 8, 12, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .logo-container img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .brand-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .brand-title span {
+            color: #d6e022;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #d6e022;
+        }
+        main {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #d6e022;
+            margin-bottom: 2rem;
+        }
+        /* Secciones y Galería sin marcos forzados (proporción natural) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        .ia-card {
+            background: rgba(3, 7, 18, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        /* Estilo libre para la imagen sin restricciones de marcos oscuros */
+        .ia-image-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.2);
+        }
+        .ia-image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain; /* Muestra la imagen completa respetando su relación de aspecto */
+            display: block;
+            border-radius: 8px;
+        }
+        .ia-card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+        .ia-card p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
         }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <!-- Fondo Interactivo Vanta Birds -->
+    <!-- Fondo Interactivo Vanta.js -->
     <div id="vanta-background"></div>
 
-    <!-- Navegación con Contenedor de Logo -->
-    <header class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="h-12 w-12 rounded-xl bg-black/50 border border-emerald-500/30 flex items-center justify-center p-1 overflow-hidden shadow-inner">
-                    <img src="logo.jpg.jpg" alt="Logo Núcleo Sonoro" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="text-xs text-emerald-400 font-bold hidden">NS</span>
-                </div>
-                <span class="font-extrabold text-lg tracking-wider text-white text-shadow-strong">
-                    NÚCLEO SONORO <span class="text-emerald-400">ESTUDIO IA</span>
-                </span>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
-                <a href="#inicio" class="hover:text-emerald-400 transition text-shadow-strong">Inicio</a>
-                <a href="#fastweb" class="hover:text-emerald-400 transition text-shadow-strong">FastWeb</a>
-                <a href="#gbp" class="hover:text-emerald-400 transition text-shadow-strong">GBP & Tracción</a>
-                <a href="#desarrollos" class="hover:text-emerald-400 transition text-shadow-strong">Ecosistema IA</a>
-                <a href="#contacto" class="hover:text-emerald-400 transition text-shadow-strong">Contacto</a>
-            </nav>
+    <!-- Menú de Navegación -->
+    <header>
+        <div class="logo-container">
+            <!-- Ubicación clave del Logo -->
+            <img src="logo.png" alt="Núcleo Sonoro Logo">
+            <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#agentes">Agentes</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-24">
-        <div class="max-w-4xl glass-card p-12 rounded-3xl">
-            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight text-white text-shadow-strong">
-                Potencia tus Ventas y Visibilidad con Inteligencia Artificial
-            </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-medium text-shadow-strong">
-                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales, FastWebs de alto rendimiento y automatización comercial para escalar tu práctica profesional.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-2xl">
-                    Agendar por WhatsApp
-                </a>
-                <a href="#fastweb" class="glass-card hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl transition">
-                    Ver Infraestructura
-                </a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="inicio" class="hero-section">
+            <h1>Inteligencia Artificial de Alto Impacto</h1>
+            <p>Soluciones conversacionales, automatización y desarrollo avanzado.</p>
+        </section>
 
-    <!-- SECCIÓN FASTWEB -->
-    <section id="fastweb" class="py-28 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Estrategia Comercial 1</span>
-            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Infraestructura FastWeb</h2>
-            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Sitios ultrarrápidos diseñados para conversión, captura de prospectos y despliegue inmediato de agentes inteligentes.</p>
-        </div>
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-6">
-                <h3 class="text-2xl md:text-3xl font-extrabold text-white text-shadow-strong">Velocidad y Persuasión Comercial</h3>
-                <p class="text-gray-200 leading-relaxed text-base font-medium text-shadow-strong">
-                    Una FastWeb es el embudo principal donde convergen tus campañas de visibilidad. Integra flujos automáticos y una estructura optimizada para que cada visitante se convierta en un cliente calificado sin fricciones.
-                </p>
-            </div>
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="010 LANDINGS CARGA RAPIDA EN COMPUTADORA.jpg" alt="Landings Carga Rápida" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>010 LANDINGS CARGA RAPIDA EN COMPUTADORA.jpg</div>'">
+        <!-- Contenedor de las 7 imágenes con sus respectivos textos descriptivos -->
+        <div class="content-grid">
+
+            <!-- Imagen 1 -->
+            <div class="ia-card">
+                <div class="ia-image-wrapper">
+                    <img src="foto-01.jpg" alt="Agentes de IA en Acción">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">010 LANDINGS CARGA RAPIDA EN COMPUTADORA.jpg</p>
+                <h3>Agentes de IA en Acción</h3>
+                <p>Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción en tiempo real.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN GBP (Google Business Profile) -->
-    <section id="gbp" class="py-28 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Estrategia Comercial 2</span>
-            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Optimización GBP (Google Business Profile)</h2>
-            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Dominio absoluto del posicionamiento local en Bogotá para captar clientes en el momento exacto.</p>
-        </div>
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="08 NUCLEO GOOGLE BUSINESS PROFILE EN CELULAR.jpg" alt="Google Business Profile" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>08 NUCLEO GOOGLE BUSINESS PROFILE EN CELULAR.jpg</div>'">
+            <!-- Imagen 2 -->
+            <div class="ia-card">
+                <div class="ia-image-wrapper">
+                    <img src="foto-02.jpg" alt="Asistentes Virtuales Integrados">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">08 NUCLEO GOOGLE BUSINESS PROFILE EN CELULAR.jpg</p>
+                <h3>Asistentes Virtuales Integrados</h3>
+                <p>Interfaces móviles y de escritorio conectadas para garantizar disponibilidad y gestión fluida 24/7.</p>
             </div>
-            <div class="space-y-6 md:order-2">
-                <h3 class="text-2xl md:text-3xl font-extrabold text-white text-shadow-strong">Visibilidad y Reputación Local</h3>
-                <p class="text-gray-200 leading-relaxed text-base font-medium text-shadow-strong">
-                    El perfil optimizado en Google vincula la autoridad de tu práctica directamente con los canales automatizados. Maximizamos las interacciones y consultas hacia tu agenda conectada con IA.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- ECOSISTEMA DE DESARROLLOS IA -->
-    <section id="desarrollos" class="py-28 px-6 max-w-7xl mx-auto space-y-24">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Ecosistema de Soluciones IA</h2>
-            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Desarrollos tecnológicos de vanguardia con sus respectivas arquitecturas visuales y operativas.</p>
-        </div>
-
-        <!-- Módulo: Carlos con Pocillo -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-6">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Dirección Estratégica</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Liderazgo y Consultoría Directa</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    Acompañamiento personalizado de alto nivel para transformar ideas conceptuales en hojas de ruta técnicas y modelos de negocio rentables.
-                </p>
-            </div>
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="01 CARLOS CON POCILLO.jpg.jpg" alt="01 CARLOS CON POCILLO.jpg.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>01 CARLOS CON POCILLO.jpg.jpg</div>'">
+            <!-- Imagen 3 -->
+            <div class="ia-card">
+                <div class="ia-image-wrapper">
+                    <img src="foto-03.jpg" alt="Automatización Médica y Especializada">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">01 CARLOS CON POCILLO.jpg.jpg</p>
+                <h3>Automatización Especializada</h3>
+                <p>Optimización de flujos de trabajo orientados a la atención al cliente y gestión de agendas complejas.</p>
             </div>
-        </div>
 
-        <!-- Módulo: Agentes de IA con Odontólogo -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg" alt="05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg</div>'">
+            <!-- Imagen 4 -->
+            <div class="ia-card">
+                <div class="ia-image-wrapper">
+                    <img src="foto-04.jpg" alt="Infraestructura Tecnológica">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg</p>
+                <h3>Infraestructura Tecnológica</h3>
+                <p>Despliegues seguros, robustos y escalables adaptados a las necesidades operativas de tu organización.</p>
             </div>
-            <div class="space-y-6 md:order-2">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Núcleo Central</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Agentes de IA en Acción</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción crítica orientada a la conversión, consulta de disponibilidad y registro de trazabilidad comercial.
-                </p>
-            </div>
-        </div>
 
-        <!-- Módulo: IA Conversacional con Doctora -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-6">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Disponibilidad Comercial</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">IA Conversacional Avanzada</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    La voz de tu marca atendiendo prospectos permanentemente a cualquier hora con conversaciones fluidas que califican y responden con precisión milimétrica.
-                </p>
-            </div>
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="015 IA CONVERSACIONAL CON DOCTORA.jpg.jpg" alt="015 IA CONVERSACIONAL CON DOCTORA.jpg.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>015 IA CONVERSACIONAL CON DOCTORA.jpg.jpg</div>'">
+            <!-- Imagen 5 (NUEVA) -->
+            <div class="ia-card" id="metodologia">
+                <div class="ia-image-wrapper">
+                    <img src="foto-05.jpg" alt="Metodología Estratégica">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">015 IA CONVERSACIONAL CON DOCTORA.jpg.jpg</p>
+                <h3>Metodología y Ejecución</h3>
+                <p>Enfoque riguroso desde la ideación conceptual hasta la integración técnica y el despliegue en producción.</p>
             </div>
-        </div>
 
-        <!-- Módulo: Lucy en el Celular -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
-                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
-                    <img src="013 LUCY EN EL CELULAR.jpg.jpg" alt="013 LUCY EN EL CELULAR.jpg.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>013 LUCY EN EL CELULAR.jpg.jpg</div>'">
+            <!-- Imagen 6 (NUEVA) -->
+            <div class="ia-card" id="proyectos">
+                <div class="ia-image-wrapper">
+                    <img src="foto-06.jpg" alt="Casos de Éxito y Proyectos">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">013 LUCY EN EL CELULAR.jpg.jpg</p>
+                <h3>Proyectos de Vanguardia</h3>
+                <p>Experiencias interactivas de alto rendimiento diseñadas para destacar en entornos digitales exigentes.</p>
             </div>
-            <div class="space-y-6 md:order-2">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Interfaz Móvil</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Asistentes Virtuales Integrados</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    Lucy operando en sintonía con las necesidades del entorno digital, gestionando prospectos de forma dinámica y asegurando el seguimiento continuo.
-                </p>
+
+            <!-- Imagen 7 (NUEVA) -->
+            <div class="ia-card" id="contacto">
+                <div class="ia-image-wrapper">
+                    <img src="foto-07.jpg" alt="Atención Exclusiva">
+                </div>
+                <h3>Atención y Soporte</h3>
+                <p>Canales directos y personalizados vía WhatsApp y correo comercial para dar arranque inmediato a tus iniciativas.</p>
             </div>
+
         </div>
+    </main>
 
-    </section>
+    <footer>
+        <p>&copy; 2026 Núcleo Sonoro Estudio IA. Bogotá, Colombia. Cita previa vía WhatsApp (+57 314 405 2859).</p>
+    </footer>
 
-    <!-- Metodología -->
-    <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="glass-card p-10 md:p-14 rounded-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-400 text-shadow-strong">Metodología de Trabajo</h2>
-            <p class="text-gray-200 leading-relaxed text-lg font-medium text-shadow-strong">
-                Fusionamos la ingeniería de software de alto nivel con estrategias de marketing, FastWeb y GBP de ejecución rápida (Vibe Coding). Cada solución está orientada a resultados comerciales medibles y un crecimiento escalable.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center mb-16">
-        <div class="glass-card p-12 rounded-3xl shadow-2xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-shadow-strong">Iniciemos tu Proyecto</h2>
-            <p class="text-gray-200 mb-8 font-medium text-shadow-strong">Bogotá, Colombia | Atención exclusiva con cita previa</p>
-            <p class="text-emerald-400 font-mono text-xl mb-2 font-bold text-shadow-strong">WhatsApp: +57 314 405 2859</p>
-            <p class="text-gray-300 font-mono text-base text-shadow-strong">Email: nucleosonoro@gmail.com</p>
-        </div>
-    </section>
-
-    <!-- Scripts de Vanta y Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <!-- Scripts de Three.js y Vanta.js configurados -->
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.birds.min.js"></script>
     <script>
         VANTA.BIRDS({
           el: "#vanta-background",
@@ -242,10 +264,13 @@
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color1: 0x382e27,
-          color2: 0x314f46,
+          backgroundColor: 0x8eabcc,
+          color1: 0x1023a9,
+          color2: 0xd6e022,
+          colorMode: "lerp",
+          alignment: 40.00,
           cohesion: 5.00
-        });
+        })
     </script>
 </body>
 </html>
