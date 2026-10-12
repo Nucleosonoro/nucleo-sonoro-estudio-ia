@@ -1,195 +1,136 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Núcleo Sonoro Estudio IA | Consultoría & Arquitectura de Soluciones de IA</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              orange: '#E65C00',
-              red: '#C0392B',
-              dark: '#0F172A',
-              slate: '#334155',
-              light: '#F8FAFC',
-              border: '#E2E8F0'
-            }
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Núcleo Sonoro Estudio IA</title>
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #f3f4f6;
+            background-color: #0d1117;
         }
-      }
-    }
-  </script>
+        /* Contenedor del fondo Vanta.js */
+        #vanta-background {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .glass-card {
+            background: rgba(13, 17, 23, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-[#F8FAFC] text-brand-dark font-sans antialiased selection:bg-brand-orange selection:text-white">
+<body class="overflow-x-hidden">
 
-  <!-- HEADER / NAVEGACIÓN -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-brand-border">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="logo-nucleo.png" alt="Núcleo Sonoro Estudio IA" class="h-10 w-auto" />
-        <span class="font-bold text-lg tracking-tight hidden md:inline-block">NÚCLEO SONORO <span class="text-brand-orange text-xs uppercase tracking-widest block font-medium">Estudio IA</span></span>
-      </a>
-      <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-slate">
-        <a href="#soluciones" class="hover:text-brand-orange transition-colors">Soluciones IA</a>
-        <a href="#metodologia" class="hover:text-brand-orange transition-colors">Metodología</a>
-        <a href="#nosotros" class="hover:text-brand-orange transition-colors">Nosotros</a>
-        <a href="#contacto" class="hover:text-brand-orange transition-colors">Contacto</a>
-      </nav>
-      <a href="https://wa.me/573144052859?text=Hola,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20y%20asesor%C3%ADa%20sobre%20sus%20servicios%20y%20soluciones%20para%20mi%20proyecto." 
-         target="_blank" 
-         class="bg-brand-dark text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-orange transition-all shadow-sm flex items-center gap-2">
-        <span>Agendar Cita</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </a>
-    </div>
-  </header>
+    <!-- Fondo Interactivo Vanta Birds -->
+    <div id="vanta-background"></div>
 
-  <!-- HERO SECTION -->
-  <section class="py-20 md:py-28 px-6 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-brand-orange px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-          Consultoría & Arquitectura de IA B2B
+    <!-- Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-card">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Espacio para tu logo -->
+                <img src="logo.png" alt="Logo Núcleo Sonoro" class="h-10 w-auto object-contain" onerror="this.style.display='none'">
+                <span class="font-bold text-lg tracking-wider text-white">NÚCLEO SONORO <span class="text-emerald-400">ESTUDIO IA</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-emerald-400 transition">Inicio</a>
+                <a href="#estudio" class="hover:text-emerald-400 transition">Estudio</a>
+                <a href="#metodologia" class="hover:text-emerald-400 transition">Metodología</a>
+                <a href="#galeria" class="hover:text-emerald-400 transition">Galería</a>
+                <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
+            </nav>
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.15] text-brand-dark">
-          Transformamos cuellos de botella en <span class="bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">Soluciones Inteligentes</span>
-        </h1>
-        <p class="text-lg md:text-xl text-brand-slate font-normal leading-relaxed max-w-2xl">
-          Diseño e implementación de asistentes de voz 24/7, procesamiento automatizado de documentos, desarrollo web ultra fluido y producción audiovisual de tendencia.
-        </p>
-        <div class="pt-4 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/573144052859?text=Hola,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20y%20asesor%C3%ADa%20sobre%20sus%20servicios%20y%20soluciones%20para%20mi%20proyecto." 
-             target="_blank" 
-             class="bg-brand-orange text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition-all text-center shadow-lg shadow-orange-500/20">
-            Consultar por WhatsApp
-          </a>
-          <a href="#soluciones" class="border border-brand-border bg-white text-brand-dark px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all text-center">
-            Explorar Soluciones
-          </a>
-        </div>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-brand-border">
-          <img src="foto-01-hero-lucy.jpg" alt="Lucy AI Asistente" class="rounded-xl w-full h-auto object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- NÚCLEO DE SOLUCIONES (4 PILARES) -->
-  <section id="soluciones" class="py-20 bg-white border-y border-brand-border">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-xs font-bold text-brand-orange uppercase tracking-widest">Nuestra Oferta Especializada</h2>
-        <p class="text-3xl md:text-4xl font-extrabold tracking-tight">Infraestructura Tecnológica a la Medida</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Pilar 1 -->
-        <div class="bg-[#F8FAFC] border border-brand-border rounded-2xl p-8 space-y-6 hover:shadow-md transition-shadow">
-          <div class="overflow-hidden rounded-xl border border-brand-border bg-white">
-            <img src="foto-02-agentes-arquitectura.jpg" alt="Agentes de IA" class="w-full h-60 object-cover" />
-          </div>
-          <h3 class="text-2xl font-bold">AI Voice Agents & Smart Booking (Lucy AI)</h3>
-          <p class="text-brand-slate text-sm leading-relaxed">
-            Asistentes virtuales de voz y texto en tiempo real. Automatización completa de agendamiento de citas, gestión de bases de datos de clientes, atención telefónica 24/7 e integración directa con Google Calendar y WhatsApp.
-          </p>
+    <!-- Sección Principal / Hero -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+        <div class="max-w-3xl glass-card p-10 rounded-2xl shadow-2xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                El Futuro del Sonido y la Inteligencia Artificial
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8">
+                Consultoría y desarrollo de proyectos de vanguardia basados en Bogotá, Colombia. Atención exclusiva con cita previa.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+                    Agendar por WhatsApp
+                </a>
+                <a href="#contacto" class="glass-card hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-xl transition">
+                    Contacto Directo
+                </a>
+            </div>
         </div>
+    </section>
 
-        <!-- Pilar 2 -->
-        <div class="bg-[#F8FAFC] border border-brand-border rounded-2xl p-8 space-y-6 hover:shadow-md transition-shadow">
-          <div class="overflow-hidden rounded-xl border border-brand-border bg-white">
-            <img src="foto-12-diagrama-flujo.jpg" alt="Procesamiento Inteligente" class="w-full h-60 object-cover" />
-          </div>
-          <h3 class="text-2xl font-bold">Intelligent Document Processing (IDP) & BPO</h3>
-          <p class="text-brand-slate text-sm leading-relaxed">
-            Estructuración y automatización de flujos de trabajo impulsados por visión por computadora y LLMs. Extracción automatizada, auditoría y exportación a Excel/Bases de Datos de PDFs, facturas y certificados.
-          </p>
+    <!-- Sección Metodología -->
+    <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="glass-card p-8 md:p-12 rounded-2xl">
+            <h2 class="text-3xl font-bold mb-6 text-emerald-400">Metodología de Trabajo</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+                Fusionamos la ingeniería de software de alto nivel con estrategias creativas de ejecución rápida (Vibe Coding). Cada solución está diseñada a la medida para garantizar un impacto profundo y sostenible.
+            </p>
         </div>
+    </section>
 
-        <!-- Pilar 3 -->
-        <div class="bg-[#F8FAFC] border border-brand-border rounded-2xl p-8 space-y-6 hover:shadow-md transition-shadow">
-          <div class="overflow-hidden rounded-xl border border-brand-border bg-white">
-            <img src="foto-14-web-fast-variante.jpg" alt="Desarrollo Web Fast" class="w-full h-60 object-cover" />
-          </div>
-          <h3 class="text-2xl font-bold">Plataformas Web Fast & Carga Instantánea</h3>
-          <p class="text-brand-slate text-sm leading-relaxed">
-            Sitios web ultra fluidos, optimizados para conversión y velocidad máxima. Arquitectura moderna hospedada en Vercel/GitHub para una presencia digital impecable sin costos de mantenimiento absurdos.
-          </p>
+    <!-- Sección Galería (Espacio para tus 16 imágenes) -->
+    <section id="galeria" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-center">Nuestra Experiencia Visual</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Ejemplo de carga de imágenes (reemplaza 'foto-01.jpg' con los nombres reales de tus archivos subidos a GitHub) -->
+            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
+                <img src="foto-01.jpg" alt="Proyecto 1" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 01</span>'">
+            </div>
+            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
+                <img src="foto-02.jpg" alt="Proyecto 2" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 02</span>'">
+            </div>
+            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
+                <img src="foto-03.jpg" alt="Proyecto 3" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 03</span>'">
+            </div>
+            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
+                <img src="foto-04.jpg" alt="Proyecto 4" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 04</span>'">
+            </div>
         </div>
+    </section>
 
-        <!-- Pilar 4 -->
-        <div class="bg-[#F8FAFC] border border-brand-border rounded-2xl p-8 space-y-6 hover:shadow-md transition-shadow">
-          <div class="overflow-hidden rounded-xl border border-brand-border bg-white">
-            <img src="foto-07-estudio-edicion.jpg" alt="Producción Audiovisual" class="w-full h-60 object-cover" />
-          </div>
-          <h3 class="text-2xl font-bold">Producción Audiovisual de Tendencia & Sonido</h3>
-          <p class="text-brand-slate text-sm leading-relaxed">
-            Creación y postproducción de contenidos visuales y de audio de alto valor estético. Edición, identidad sonora y activos de marca diseñados para comunicar autoridad técnica y corporativa.
-          </p>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <div class="glass-card p-10 rounded-2xl">
+            <h2 class="text-3xl font-bold mb-6">Iniciemos tu Proyecto</h2>
+            <p class="text-gray-300 mb-6">Bogotá, Colombia | Atención exclusiva con cita previa</p>
+            <p class="text-emerald-400 font-mono text-lg mb-2">WhatsApp: +57 314 405 2859</p>
+            <p class="text-gray-400 font-mono">Email: nucleosonoro@gmail.com</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NOSOTROS / PERFIL PROFESIONAL -->
-  <section id="nosotros" class="py-20 max-w-7xl mx-auto px-6">
-    <div class="bg-brand-dark text-white rounded-3xl p-8 md:p-16 relative overflow-hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-6">
-          <span class="text-brand-orange text-xs font-bold uppercase tracking-widest">Liderazgo Técnico & Consultoría</span>
-          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-            Especialista en transformar la operativa B2B
-          </h2>
-          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
-            Especialista en transformar cuellos de botella operativos en Micro-SaaS y soluciones de IA rentables. Diseño e implemento desde agentes de voz hiper-específicos para el agendamiento y atención al cliente, hasta motores de procesamiento de documentos e imágenes que convierten datos caóticos en tablas estructuradas en segundos.
-          </p>
-          <div class="pt-2 text-sm text-slate-400">
-            Atención exclusivamente con cita previa vía WhatsApp. Bogotá, Colombia & Operación Global.
-          </div>
-        </div>
-        <div class="lg:col-span-5">
-          <div class="rounded-2xl overflow-hidden border-2 border-slate-700">
-            <img src="foto-09-carlos-autor.jpg" alt="Carlos Consultor Senior" class="w-full h-auto object-cover" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO & FOOTER -->
-  <footer id="contacto" class="bg-white border-t border-brand-border py-16 px-6">
-    <div class="max-w-7xl mx-auto text-center space-y-8">
-      <img src="logo-nucleo.png" alt="Núcleo Sonoro Logo" class="h-12 w-auto mx-auto" />
-      <h2 class="text-2xl md:text-3xl font-extrabold">¿Listo para estructurar las soluciones de IA de tu empresa?</h2>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-        <a href="https://wa.me/573144052859?text=Hola,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20y%20asesor%C3%ADa%20sobre%20sus%20servicios%20y%20soluciones%20para%20mi%20proyecto." 
-           target="_blank" 
-           class="bg-brand-orange text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition-all flex items-center gap-3">
-          <span>WhatsApp: +57 314 405 2859</span>
-        </a>
-        <a href="mailto:nucleosonoro@gmail.com" class="text-brand-slate hover:text-brand-dark font-medium underline underline-offset-4">
-          nucleosonoro@gmail.com
-        </a>
-      </div>
-      <div class="pt-12 text-xs text-brand-slate border-t border-brand-border">
-        © 2026 Núcleo Sonoro Estudio IA. Todos los derechos reservados. Bogotá, Colombia.
-      </div>
-    </div>
-  </footer>
-
+    <!-- Scripts de Three.js y Vanta.js (Birds) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <script>
+        VANTA.BIRDS({
+          el: "#vanta-background",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color1: 0x382e27,
+          color2: 0x314f46,
+          cohesion: 5.00
+        })
+    </script>
 </body>
 </html>
