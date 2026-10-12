@@ -13,13 +13,9 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: #ffffff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            line-height: 1.6;
         }
-        /* Contenedor absoluto para Vanta.js */
+        /* Contenedor fijo de Vanta.js de fondo */
         #vanta-bg {
             position: fixed;
             top: 0;
@@ -28,28 +24,87 @@
             height: 100vh;
             z-index: -1;
         }
-        .welcome-box {
-            background: rgba(3, 7, 18, 0.8);
-            backdrop-filter: blur(15px);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #ffffff; }
-        p { color: #d6e022; font-size: 1.2rem; }
+        .brand-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .brand-title span {
+            color: #d6e022;
+        }
+        main {
+            padding-top: 120px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 4rem;
+        }
+        .intro-box {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-align: center;
+        }
+        h1 span {
+            color: #d6e022;
+        }
+        .intro-box p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Contenedor del fondo interactivo -->
+    <!-- Fondo Interactivo Vanta.js -->
     <div id="vanta-bg"></div>
 
-    <div class="welcome-box">
-        <h1>NÚCLEO SONORO ESTUDIO IA</h1>
-        <p>Fase 1: Verificando el fondo interactivo Vanta.js</p>
-    </div>
+    <header>
+        <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
+    </header>
 
-    <!-- Scripts locales o CDN de Three.js y Vanta -->
+    <main>
+        <div class="intro-box">
+            <h1>Inteligencia Artificial de <span>Alto Impacto</span></h1>
+            
+            <p>En Núcleo Sonoro Estudio IA, transformamos la complejidad tecnológica en experiencias intuitivas y de alto rendimiento. Diseñamos soluciones conversacionales y arquitecturas de automatización inteligente orientadas a optimizar la gestión de profesionales, clínicas y negocios, permitiendo automatizar la atención al cliente y la asignación de citas sin perder el toque humano que cada marca necesita.</p>
+            
+            <p>Maximizamos la presencia digital de nuestros clientes combinando herramientas de máxima tracción. Desarrollamos Fast Landings de ultra alta velocidad (con tiempos de carga menores a un segundo) que garantizan una conversión impecable desde dispositivos móviles y de escritorio, integradas de forma nativa con estrategias avanzadas de posicionamiento en Google Business Profile (GBP) para capturar tráfico local hipercualificado y multiplicar las llamadas y visitas.</p>
+            
+            <p>Al frente de nuestras capacidades de IA se encuentra Lucy, nuestra asistente virtual de última generación desarrollada para operar por voz y texto las 24 horas del día, los 7 días de la semana. Lucy no solo responde consultas y gestiona agendas en tiempo real a través de WhatsApp y canales telefónicos, sino que centraliza flujos de trabajo completos, liberando tiempo valioso para los equipos de trabajo y garantizando una atención fluida y sin fricciones.</p>
+        </div>
+    </main>
+
+    <!-- Scripts de Three.js y Vanta.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script>
