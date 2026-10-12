@@ -23,138 +23,152 @@
             left: 0;
             z-index: -1;
         }
-        /* Contenedores con profundidad visual y excelente legibilidad */
+        /* Tarjetas de vidrio con alta opacidad para proteger la lectura */
         .glass-card {
-            background: rgba(13, 17, 23, 0.70);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(10, 14, 20, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
-        .feature-image-container {
-            background: rgba(8, 11, 16, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        /* Sombras profundas para textos sobre fondos interactivos */
+        .text-shadow-strong {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+        .image-box {
+            background: rgba(5, 8, 12, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Fondo Interactivo Vanta Birds (Tu configuración original intacta) -->
+    <!-- Fondo Interactivo Vanta Birds -->
     <div id="vanta-background"></div>
 
-    <!-- Navegación -->
-    <header class="fixed top-0 left-0 w-full z-50 glass-card">
+    <!-- Navegación con Espacio y Contenedor de Logo -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="Logo Núcleo Sonoro" class="h-10 w-auto object-contain" onerror="this.style.display='none'">
-                <span class="font-bold text-lg tracking-wider text-white">NÚCLEO SONORO <span class="text-emerald-400">ESTUDIO IA</span></span>
+                <!-- Contenedor del Logo -->
+                <div class="h-12 w-12 rounded-xl bg-black/50 border border-emerald-500/30 flex items-center justify-center p-1 overflow-hidden shadow-inner">
+                    <img src="logo.png" alt="Logo Núcleo Sonoro" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="text-xs text-emerald-400 font-bold hidden">NS</span>
+                </div>
+                <span class="font-extrabold text-lg tracking-wider text-white text-shadow-strong">
+                    NÚCLEO SONORO <span class="text-emerald-400">ESTUDIO IA</span>
+                </span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#inicio" class="hover:text-emerald-400 transition">Inicio</a>
-                <a href="#desarrollos" class="hover:text-emerald-400 transition">Desarrollos</a>
-                <a href="#metodologia" class="hover:text-emerald-400 transition">Metodología</a>
-                <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#inicio" class="hover:text-emerald-400 transition text-shadow-strong">Inicio</a>
+                <a href="#desarrollos" class="hover:text-emerald-400 transition text-shadow-strong">Desarrollos</a>
+                <a href="#metodologia" class="hover:text-emerald-400 transition text-shadow-strong">Metodología</a>
+                <a href="#contacto" class="hover:text-emerald-400 transition text-shadow-strong">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Principal / Hero (Fondo libre para Vanta) -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
-        <div class="max-w-4xl glass-card p-12 rounded-3xl shadow-2xl">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
-                El Futuro del Sonido y la Inteligencia Artificial
+    <!-- Sección Principal / Hero (Enfocada en Ventas, Marketing y Visibilidad) -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-24">
+        <div class="max-w-4xl glass-card p-12 rounded-3xl">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight text-white text-shadow-strong">
+                Potencia tus Ventas y Visibilidad con Inteligencia Artificial
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales y automatización estratégica para potenciar la práctica profesional.
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-medium text-shadow-strong">
+                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales y automatización comercial para escalar tu práctica profesional.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition shadow-lg">
+                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-2xl">
                     Agendar por WhatsApp
                 </a>
-                <a href="#desarrollos" class="glass-card hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition">
+                <a href="#desarrollos" class="glass-card hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl transition">
                     Conocer Desarrollos
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Núcleo de Desarrollos (Espacios amplios con relaciones de aspecto cuidadas y narrativa detallada) -->
+    <!-- Ecosistema de Desarrollos -->
     <section id="desarrollos" class="py-28 px-6 max-w-7xl mx-auto space-y-24">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400">Ecosistema de Soluciones IA</h2>
-            <p class="text-gray-300 text-lg">Cada módulo representa un pilar tecnológico diseñado para transformar la gestión operativa, la atención continua y la precisión analítica.</p>
+            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Ecosistema de Soluciones IA</h2>
+            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Cada módulo representa un pilar tecnológico diseñado con rigor para transformar la captación, la conversión y la gestión operativa.</p>
         </div>
 
-        <!-- Bloque 1: Agentes de IA -->
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+        <!-- Módulo 1: Agentes de IA -->
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
             <div class="space-y-6">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Núcleo Central</span>
-                <h3 class="text-3xl font-bold">Agentes de IA en Acción</h3>
-                <p class="text-gray-300 leading-relaxed text-base">
-                    Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción crítica de tu práctica. Son capaces de consultar disponibilidad en tiempo real, gestionar la agenda de forma autónoma, confirmar con los pacientes y registrar de manera segura toda la trazabilidad en el sistema.
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Núcleo Central</span>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Agentes de IA en Acción</h3>
+                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
+                    Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción crítica orientada a la conversión. Capaces de consultar disponibilidad en tiempo real, gestionar agendas autónomamente y registrar con precisión toda la trazabilidad comercial.
                 </p>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li class="flex items-center space-x-2"><span>✔</span> <span>Toma de decisiones inteligentes con base en datos reales.</span></li>
-                    <li class="flex items-center space-x-2"><span>✔</span> <span>Detección proactiva de oportunidades de mejora operativa.</span></li>
-                    <li class="flex items-center space-x-2"><span>✔</span> <span>Control absoluto y seguridad estricta de la información.</span></li>
+                <ul class="space-y-3 text-sm text-gray-200 font-medium">
+                    <li class="flex items-center space-x-3">
+                        <span class="text-emerald-400 font-bold">✔</span> 
+                        <span class="text-shadow-strong">Toma de decisiones inteligentes con base en datos de conversión.</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="text-emerald-400 font-bold">✔</span> 
+                        <span class="text-shadow-strong">Detección proactiva de oportunidades de optimización en ventas.</span>
+                    </li>
                 </ul>
             </div>
-            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl">
-                <!-- Respetando relación de aspecto y nombre exacto -->
-                <img src="06 AGENTES DE IA CON ODONTOLOGO.jpg" alt="Agentes de IA con Odontólogo" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 06 AGENTES DE IA CON ODONTOLOGO.jpg</div>'">
-            </div>
-        </div>
-
-        <!-- Bloque 2: IA Conversacional -->
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl md:order-1">
-                <img src="016 IA CONVERSACIONAL CON DOCTORA.jpg" alt="IA Conversacional con Doctora" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 016 IA CONVERSACIONAL CON DOCTORA.jpg</div>'">
-            </div>
-            <div class="space-y-6 md:order-2">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Disponibilidad 24/7</span>
-                <h3 class="text-3xl font-bold">IA Conversacional Avanzada</h3>
-                <p class="text-gray-300 leading-relaxed text-base">
-                    La voz de tus pacientes, atendida permanentemente a cualquier hora y día de la semana. Conversaciones naturales y fluidas que comprenden peticiones complejas, responden con precisión y actúan de manera inmediata integrando canales de voz y mensajería instantánea.
-                </p>
-                <p class="text-gray-400 text-sm">
-                    Diseñado para ofrecer experiencias sumamente personalizadas que elevan el estándar de atención desde el primer contacto.
-                </p>
-            </div>
-        </div>
-
-        <!-- Bloque 3: Asistentes Virtuales y Móviles (Lucy) -->
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-6">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Interfaz Móvil</span>
-                <h3 class="text-3xl font-bold">Asistentes Virtuales Integrados</h3>
-                <p class="text-gray-300 leading-relaxed text-base">
-                    Tu equipo digital operando en sintonía con las necesidades del entorno moderno. Lucy y los asistentes especializados gestionan citas de forma dinámica, reducen drásticamente el ausentismo y las cancelaciones imprevistas mediante recordatorios automatizados.
-                </p>
-                <div class="grid grid-cols-2 gap-4 pt-2">
-                    <div class="p-3 bg-black/30 rounded-xl border border-white/5">
-                        <p class="text-emerald-400 font-bold text-lg">24/7</p>
-                        <p class="text-xs text-gray-400">Atención continua sin interrupciones</p>
-                    </div>
-                    <div class="p-3 bg-black/30 rounded-xl border border-white/5">
-                        <p class="text-emerald-400 font-bold text-lg">-40%</p>
-                        <p class="text-xs text-gray-400">Reducción de ausentismo</p>
-                    </div>
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
+                <div class="rounded-xl overflow-hidden border border-white/10">
+                    <img src="06 AGENTES DE IA CON ODONTOLOGO.jpg" alt="Agentes de IA con Odontólogo" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 06 AGENTES DE IA CON ODONTOLOGO.jpg</div>'">
                 </div>
-            </div>
-            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl">
-                <img src="014 LUCY EN EL CELULAR.jpg" alt="Lucy en el Celular" class="w-full h-auto object-contain rounded-lg max-h-[500px]" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 014 LUCY EN EL CELULAR.jpg</div>'">
+                <p class="text-xs text-gray-400 text-center font-mono">Arquitectura operativa y supervisión comercial</p>
             </div>
         </div>
 
-        <!-- Bloque 4: Automatización y Flujos -->
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl md:order-1">
-                <img src="04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg" alt="Flujos y Automatizaciones" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg</div>'">
+        <!-- Módulo 2: IA Conversacional -->
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
+                <div class="rounded-xl overflow-hidden border border-white/10">
+                    <img src="016 IA CONVERSACIONAL CON DOCTORA.jpg" alt="IA Conversacional con Doctora" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 016 IA CONVERSACIONAL CON DOCTORA.jpg</div>'">
+                </div>
+                <p class="text-xs text-gray-400 text-center font-mono">Atención comercial y captación multicanal 24/7</p>
             </div>
             <div class="space-y-6 md:order-2">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Optimización Operativa</span>
-                <h3 class="text-3xl font-bold">Flujos de Trabajo y Automatizaciones</h3>
-                <p class="text-gray-300 leading-relaxed text-base">
-                    Menos tareas repetitivas y mayor margen para el valor humano. Sincronización avanzada con herramientas como Google Calendar, ejecución de seguimientos automáticos y generación de métricas analíticas sobre el rendimiento diario de la práctica.
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Disponibilidad Comercial</span>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">IA Conversacional Avanzada</h3>
+                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
+                    La voz de tu marca atendiendo prospectos permanentemente a cualquier hora. Conversaciones fluidas que califican clientes potenciales, responden con precisión y actúan de forma inmediata integrando canales de voz y mensajería.
+                </p>
+            </div>
+        </div>
+
+        <!-- Módulo 3: Asistentes Virtuales (Lucy) -->
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Interfaz Móvil</span>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Asistentes Virtuales Integrados</h3>
+                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
+                    Tu equipo comercial operando en sintonía con las necesidades del entorno digital. Lucy y los asistentes especializados gestionan prospectos de forma dinámica y aseguran el seguimiento continuo para maximizar el cierre de citas.
+                </p>
+            </div>
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
+                <div class="rounded-xl overflow-hidden border border-white/10">
+                    <img src="014 LUCY EN EL CELULAR.jpg" alt="Lucy en el Celular" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 014 LUCY EN EL CELULAR.jpg</div>'">
+                </div>
+                <p class="text-xs text-gray-400 text-center font-mono">Gestión móvil orientada a conversión y ventas</p>
+            </div>
+        </div>
+
+        <!-- Módulo 4: Automatización y Flujos -->
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
+                <div class="rounded-xl overflow-hidden border border-white/10">
+                    <img src="04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg" alt="Flujos y Automatizaciones" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg</div>'">
+                </div>
+                <p class="text-xs text-gray-400 text-center font-mono">Embudos de marketing y sincronización comercial</p>
+            </div>
+            <div class="space-y-6 md:order-2">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Optimización de Embudo</span>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Flujos de Trabajo y Automatizaciones</h3>
+                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
+                    Menos fricción operativa y mayor tracción en ventas. Sincronización avanzada con plataformas de captación, ejecución de seguimientos automáticos y analítica de rendimiento para escalar la visibilidad del negocio.
                 </p>
             </div>
         </div>
@@ -164,9 +178,9 @@
     <!-- Sección Metodología -->
     <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="glass-card p-10 md:p-14 rounded-3xl">
-            <h2 class="text-3xl font-bold mb-6 text-emerald-400">Metodología de Trabajo</h2>
-            <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                Fusionamos la ingeniería de software de alto nivel con estrategias creativas de ejecución rápida (Vibe Coding). Cada solución está diseñada a la medida para garantizar un impacto profundo, escalable y sostenible en el tiempo.
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-400 text-shadow-strong">Metodología de Trabajo</h2>
+            <p class="text-gray-200 leading-relaxed text-lg font-medium text-shadow-strong">
+                Fusionamos la ingeniería de software de alto nivel con estrategias de marketing y ejecución rápida (Vibe Coding). Cada solución está orientada a resultados comerciales medibles y un crecimiento escalable.
             </p>
         </div>
     </section>
@@ -174,10 +188,10 @@
     <!-- Sección Contacto -->
     <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center mb-16">
         <div class="glass-card p-12 rounded-3xl shadow-2xl">
-            <h2 class="text-3xl font-bold mb-4">Iniciemos tu Proyecto</h2>
-            <p class="text-gray-300 mb-8">Bogotá, Colombia | Atención exclusiva con cita previa</p>
-            <p class="text-emerald-400 font-mono text-xl mb-2">WhatsApp: +57 314 405 2859</p>
-            <p class="text-gray-400 font-mono text-base">Email: nucleosonoro@gmail.com</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-shadow-strong">Iniciemos tu Proyecto</h2>
+            <p class="text-gray-200 mb-8 font-medium text-shadow-strong">Bogotá, Colombia | Atención exclusiva con cita previa</p>
+            <p class="text-emerald-400 font-mono text-xl mb-2 font-bold text-shadow-strong">WhatsApp: +57 314 405 2859</p>
+            <p class="text-gray-300 font-mono text-base text-shadow-strong">Email: nucleosonoro@gmail.com</p>
         </div>
     </section>
 
