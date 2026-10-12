@@ -16,7 +16,7 @@
             background-color: #8eabcc;
             overflow-x: hidden;
         }
-        /* Contenedor principal de Vanta */
+        /* Contenedor fijo de Vanta.js de fondo */
         #vanta-background {
             position: fixed;
             top: 0;
@@ -73,7 +73,7 @@
             color: #d6e022;
         }
         main {
-            padding-top: 100px;
+            padding-top: 120px;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: 1.5rem;
@@ -94,13 +94,13 @@
             color: #d6e022;
             margin-bottom: 2rem;
         }
-        /* Secciones y Galería sin marcos forzados (proporción natural) */
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-bottom: 4rem;
         }
+        /* Tarjetas con efecto Glassmorphism */
         .ia-card {
             background: rgba(3, 7, 18, 0.75);
             backdrop-filter: blur(16px);
@@ -113,22 +113,22 @@
             gap: 1rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
-        /* Estilo libre para la imagen sin restricciones de marcos oscuros */
+        /* Contenedor limpio y libre de marcos forzados */
         .ia-image-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 12px;
             overflow: hidden;
-            border-radius: 10px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.3);
         }
+        /* La imagen toma su proporción natural de forma impecable */
         .ia-image-wrapper img {
             width: 100%;
             height: auto;
-            max-height: 500px;
-            object-fit: contain; /* Muestra la imagen completa respetando su relación de aspecto */
             display: block;
+            object-fit: contain;
             border-radius: 8px;
         }
         .ia-card h3 {
@@ -157,7 +157,7 @@
     <!-- Menú de Navegación -->
     <header>
         <div class="logo-container">
-            <!-- Ubicación clave del Logo -->
+            <!-- Logo principal -->
             <img src="logo.png" alt="Núcleo Sonoro Logo">
             <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
         </div>
@@ -178,13 +178,13 @@
             <p>Soluciones conversacionales, automatización y desarrollo avanzado.</p>
         </section>
 
-        <!-- Contenedor de las 7 imágenes con sus respectivos textos descriptivos -->
-        <div class="content-grid">
+        <!-- Cuadrícula con las 7 imágenes y sus textos -->
+        <div class="content-grid" id="agentes">
 
             <!-- Imagen 1 -->
             <div class="ia-card">
                 <div class="ia-image-wrapper">
-                    <img src="foto-01.jpg" alt="Agentes de IA en Acción">
+                    <img src="05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg" alt="Agentes de IA en Acción">
                 </div>
                 <h3>Agentes de IA en Acción</h3>
                 <p>Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción en tiempo real.</p>
@@ -193,7 +193,7 @@
             <!-- Imagen 2 -->
             <div class="ia-card">
                 <div class="ia-image-wrapper">
-                    <img src="foto-02.jpg" alt="Asistentes Virtuales Integrados">
+                    <img src="013 LUCY EN EL CELULAR.jpg.jpg" alt="Asistentes Virtuales Integrados">
                 </div>
                 <h3>Asistentes Virtuales Integrados</h3>
                 <p>Interfaces móviles y de escritorio conectadas para garantizar disponibilidad y gestión fluida 24/7.</p>
@@ -202,7 +202,7 @@
             <!-- Imagen 3 -->
             <div class="ia-card">
                 <div class="ia-image-wrapper">
-                    <img src="foto-03.jpg" alt="Automatización Médica y Especializada">
+                    <img src="foto-03.jpg" alt="Automatización Especializada">
                 </div>
                 <h3>Automatización Especializada</h3>
                 <p>Optimización de flujos de trabajo orientados a la atención al cliente y gestión de agendas complejas.</p>
@@ -217,7 +217,7 @@
                 <p>Despliegues seguros, robustos y escalables adaptados a las necesidades operativas de tu organización.</p>
             </div>
 
-            <!-- Imagen 5 (NUEVA) -->
+            <!-- Imagen 5 (Metodología) -->
             <div class="ia-card" id="metodologia">
                 <div class="ia-image-wrapper">
                     <img src="foto-05.jpg" alt="Metodología Estratégica">
@@ -226,7 +226,7 @@
                 <p>Enfoque riguroso desde la ideación conceptual hasta la integración técnica y el despliegue en producción.</p>
             </div>
 
-            <!-- Imagen 6 (NUEVA) -->
+            <!-- Imagen 6 (Proyectos) -->
             <div class="ia-card" id="proyectos">
                 <div class="ia-image-wrapper">
                     <img src="foto-06.jpg" alt="Casos de Éxito y Proyectos">
@@ -235,7 +235,7 @@
                 <p>Experiencias interactivas de alto rendimiento diseñadas para destacar en entornos digitales exigentes.</p>
             </div>
 
-            <!-- Imagen 7 (NUEVA) -->
+            <!-- Imagen 7 (Contacto) -->
             <div class="ia-card" id="contacto">
                 <div class="ia-image-wrapper">
                     <img src="foto-07.jpg" alt="Atención Exclusiva">
@@ -251,26 +251,26 @@
         <p>&copy; 2026 Núcleo Sonoro Estudio IA. Bogotá, Colombia. Cita previa vía WhatsApp (+57 314 405 2859).</p>
     </footer>
 
-    <!-- Scripts de Three.js y Vanta.js configurados -->
+    <!-- Scripts de Three.js y Vanta.js -->
     <script src="three.r134.min.js"></script>
     <script src="vanta.birds.min.js"></script>
     <script>
-        VANTA.BIRDS({
-          el: "#vanta-background",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          backgroundColor: 0x8eabcc,
-          color1: 0x1023a9,
-          color2: 0xd6e022,
-          colorMode: "lerp",
-          alignment: 40.00,
-          cohesion: 5.00
-        })
+    VANTA.BIRDS({
+      el: "#vanta-background",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x8eabcc,
+      color1: 0x1023a9,
+      color2: 0xd6e022,
+      colorMode: "lerp",
+      alignment: 40.00,
+      cohesion: 5.00
+    })
     </script>
 </body>
 </html>
