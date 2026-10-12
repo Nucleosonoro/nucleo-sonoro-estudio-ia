@@ -11,13 +11,16 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: #ffffff;
-            background-color: #8eabcc;
-            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        /* Contenedor fijo de Vanta.js de fondo */
-        #vanta-background {
+        /* Contenedor absoluto para Vanta.js */
+        #vanta-bg {
             position: fixed;
             top: 0;
             left: 0;
@@ -25,252 +28,47 @@
             height: 100vh;
             z-index: -1;
         }
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(12px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .welcome-box {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .logo-container img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .brand-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .brand-title span {
-            color: #d6e022;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #d6e022;
-        }
-        main {
-            padding-top: 120px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-        .hero-section {
-            text-align: center;
-            padding: 4rem 1rem;
-        }
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        .hero-section p {
-            font-size: 1.25rem;
-            color: #d6e022;
-            margin-bottom: 2rem;
-        }
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-        /* Tarjetas con efecto Glassmorphism */
-        .ia-card {
-            background: rgba(3, 7, 18, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-        /* Contenedor limpio y libre de marcos forzados */
-        .ia-image-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        /* La imagen toma su proporción natural de forma impecable */
-        .ia-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .ia-card h3 {
-            font-size: 1.4rem;
-            color: #ffffff;
-        }
-        .ia-card p {
-            font-size: 1rem;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: #94a3b8;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 4rem;
-        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #ffffff; }
+        p { color: #d6e022; font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
-    <!-- Fondo Interactivo Vanta.js -->
-    <div id="vanta-background"></div>
+    <!-- Contenedor del fondo interactivo -->
+    <div id="vanta-bg"></div>
 
-    <!-- Menú de Navegación -->
-    <header>
-        <div class="logo-container">
-            <!-- Logo principal -->
-            <img src="logo.png" alt="Núcleo Sonoro Logo">
-            <div class="brand-title">NÚCLEO SONORO <br><span>ESTUDIO IA</span></div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#agentes">Agentes</a></li>
-                <li><a href="#metodologia">Metodología</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="welcome-box">
+        <h1>NÚCLEO SONORO ESTUDIO IA</h1>
+        <p>Fase 1: Verificando el fondo interactivo Vanta.js</p>
+    </div>
 
-    <main>
-        <section id="inicio" class="hero-section">
-            <h1>Inteligencia Artificial de Alto Impacto</h1>
-            <p>Soluciones conversacionales, automatización y desarrollo avanzado.</p>
-        </section>
-
-        <!-- Cuadrícula con las 7 imágenes y sus textos -->
-        <div class="content-grid" id="agentes">
-
-            <!-- Imagen 1 -->
-            <div class="ia-card">
-                <div class="ia-image-wrapper">
-                    <img src="05 AGENTES DE IA CON ODONTOLOGO.jpg.jpg" alt="Agentes de IA en Acción">
-                </div>
-                <h3>Agentes de IA en Acción</h3>
-                <p>Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción en tiempo real.</p>
-            </div>
-
-            <!-- Imagen 2 -->
-            <div class="ia-card">
-                <div class="ia-image-wrapper">
-                    <img src="013 LUCY EN EL CELULAR.jpg.jpg" alt="Asistentes Virtuales Integrados">
-                </div>
-                <h3>Asistentes Virtuales Integrados</h3>
-                <p>Interfaces móviles y de escritorio conectadas para garantizar disponibilidad y gestión fluida 24/7.</p>
-            </div>
-
-            <!-- Imagen 3 -->
-            <div class="ia-card">
-                <div class="ia-image-wrapper">
-                    <img src="foto-03.jpg" alt="Automatización Especializada">
-                </div>
-                <h3>Automatización Especializada</h3>
-                <p>Optimización de flujos de trabajo orientados a la atención al cliente y gestión de agendas complejas.</p>
-            </div>
-
-            <!-- Imagen 4 -->
-            <div class="ia-card">
-                <div class="ia-image-wrapper">
-                    <img src="foto-04.jpg" alt="Infraestructura Tecnológica">
-                </div>
-                <h3>Infraestructura Tecnológica</h3>
-                <p>Despliegues seguros, robustos y escalables adaptados a las necesidades operativas de tu organización.</p>
-            </div>
-
-            <!-- Imagen 5 (Metodología) -->
-            <div class="ia-card" id="metodologia">
-                <div class="ia-image-wrapper">
-                    <img src="foto-05.jpg" alt="Metodología Estratégica">
-                </div>
-                <h3>Metodología y Ejecución</h3>
-                <p>Enfoque riguroso desde la ideación conceptual hasta la integración técnica y el despliegue en producción.</p>
-            </div>
-
-            <!-- Imagen 6 (Proyectos) -->
-            <div class="ia-card" id="proyectos">
-                <div class="ia-image-wrapper">
-                    <img src="foto-06.jpg" alt="Casos de Éxito y Proyectos">
-                </div>
-                <h3>Proyectos de Vanguardia</h3>
-                <p>Experiencias interactivas de alto rendimiento diseñadas para destacar en entornos digitales exigentes.</p>
-            </div>
-
-            <!-- Imagen 7 (Contacto) -->
-            <div class="ia-card" id="contacto">
-                <div class="ia-image-wrapper">
-                    <img src="foto-07.jpg" alt="Atención Exclusiva">
-                </div>
-                <h3>Atención y Soporte</h3>
-                <p>Canales directos y personalizados vía WhatsApp y correo comercial para dar arranque inmediato a tus iniciativas.</p>
-            </div>
-
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Núcleo Sonoro Estudio IA. Bogotá, Colombia. Cita previa vía WhatsApp (+57 314 405 2859).</p>
-    </footer>
-
-    <!-- Scripts de Three.js y Vanta.js -->
-    <script src="three.r134.min.js"></script>
-    <script src="vanta.birds.min.js"></script>
+    <!-- Scripts locales o CDN de Three.js y Vanta -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script>
-    VANTA.BIRDS({
-      el: "#vanta-background",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      backgroundColor: 0x8eabcc,
-      color1: 0x1023a9,
-      color2: 0xd6e022,
-      colorMode: "lerp",
-      alignment: 40.00,
-      cohesion: 5.00
-    })
+        VANTA.BIRDS({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x8eabcc,
+          color1: 0x1023a9,
+          color2: 0xd6e022,
+          colorMode: "lerp",
+          alignment: 40.00,
+          cohesion: 5.00
+        });
     </script>
 </body>
 </html>
