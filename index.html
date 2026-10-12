@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Núcleo Sonoro Estudio IA</title>
-    <!-- Tailwind CSS para diseño moderno -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body, html {
@@ -13,9 +12,9 @@
             height: 100%;
             font-family: system-ui, -apple-system, sans-serif;
             color: #f3f4f6;
-            background-color: #0d1117;
+            background-color: transparent;
+            scroll-behavior: smooth;
         }
-        /* Contenedor del fondo Vanta.js */
         #vanta-background {
             position: fixed;
             width: 100vw;
@@ -24,97 +23,165 @@
             left: 0;
             z-index: -1;
         }
+        /* Contenedores con profundidad visual y excelente legibilidad */
         .glass-card {
-            background: rgba(13, 17, 23, 0.75);
+            background: rgba(13, 17, 23, 0.70);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .feature-image-container {
+            background: rgba(8, 11, 16, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Fondo Interactivo Vanta Birds -->
+    <!-- Fondo Interactivo Vanta Birds (Tu configuración original intacta) -->
     <div id="vanta-background"></div>
 
     <!-- Navegación -->
     <header class="fixed top-0 left-0 w-full z-50 glass-card">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Espacio para tu logo -->
                 <img src="logo.png" alt="Logo Núcleo Sonoro" class="h-10 w-auto object-contain" onerror="this.style.display='none'">
                 <span class="font-bold text-lg tracking-wider text-white">NÚCLEO SONORO <span class="text-emerald-400">ESTUDIO IA</span></span>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#inicio" class="hover:text-emerald-400 transition">Inicio</a>
-                <a href="#estudio" class="hover:text-emerald-400 transition">Estudio</a>
+                <a href="#desarrollos" class="hover:text-emerald-400 transition">Desarrollos</a>
                 <a href="#metodologia" class="hover:text-emerald-400 transition">Metodología</a>
-                <a href="#galeria" class="hover:text-emerald-400 transition">Galería</a>
                 <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Principal / Hero -->
+    <!-- Sección Principal / Hero (Fondo libre para Vanta) -->
     <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
-        <div class="max-w-3xl glass-card p-10 rounded-2xl shadow-2xl">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+        <div class="max-w-4xl glass-card p-12 rounded-3xl shadow-2xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
                 El Futuro del Sonido y la Inteligencia Artificial
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">
-                Consultoría y desarrollo de proyectos de vanguardia basados en Bogotá, Colombia. Atención exclusiva con cita previa.
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales y automatización estratégica para potenciar la práctica profesional.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+                <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition shadow-lg">
                     Agendar por WhatsApp
                 </a>
-                <a href="#contacto" class="glass-card hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-xl transition">
-                    Contacto Directo
+                <a href="#desarrollos" class="glass-card hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition">
+                    Conocer Desarrollos
                 </a>
             </div>
         </div>
+    </section>
+
+    <!-- Núcleo de Desarrollos (Espacios amplios con relaciones de aspecto cuidadas y narrativa detallada) -->
+    <section id="desarrollos" class="py-28 px-6 max-w-7xl mx-auto space-y-24">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400">Ecosistema de Soluciones IA</h2>
+            <p class="text-gray-300 text-lg">Cada módulo representa un pilar tecnológico diseñado para transformar la gestión operativa, la atención continua y la precisión analítica.</p>
+        </div>
+
+        <!-- Bloque 1: Agentes de IA -->
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Núcleo Central</span>
+                <h3 class="text-3xl font-bold">Agentes de IA en Acción</h3>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción crítica de tu práctica. Son capaces de consultar disponibilidad en tiempo real, gestionar la agenda de forma autónoma, confirmar con los pacientes y registrar de manera segura toda la trazabilidad en el sistema.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-center space-x-2"><span>✔</span> <span>Toma de decisiones inteligentes con base en datos reales.</span></li>
+                    <li class="flex items-center space-x-2"><span>✔</span> <span>Detección proactiva de oportunidades de mejora operativa.</span></li>
+                    <li class="flex items-center space-x-2"><span>✔</span> <span>Control absoluto y seguridad estricta de la información.</span></li>
+                </ul>
+            </div>
+            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl">
+                <!-- Respetando relación de aspecto y nombre exacto -->
+                <img src="06 AGENTES DE IA CON ODONTOLOGO.jpg" alt="Agentes de IA con Odontólogo" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 06 AGENTES DE IA CON ODONTOLOGO.jpg</div>'">
+            </div>
+        </div>
+
+        <!-- Bloque 2: IA Conversacional -->
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl md:order-1">
+                <img src="016 IA CONVERSACIONAL CON DOCTORA.jpg" alt="IA Conversacional con Doctora" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 016 IA CONVERSACIONAL CON DOCTORA.jpg</div>'">
+            </div>
+            <div class="space-y-6 md:order-2">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Disponibilidad 24/7</span>
+                <h3 class="text-3xl font-bold">IA Conversacional Avanzada</h3>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    La voz de tus pacientes, atendida permanentemente a cualquier hora y día de la semana. Conversaciones naturales y fluidas que comprenden peticiones complejas, responden con precisión y actúan de manera inmediata integrando canales de voz y mensajería instantánea.
+                </p>
+                <p class="text-gray-400 text-sm">
+                    Diseñado para ofrecer experiencias sumamente personalizadas que elevan el estándar de atención desde el primer contacto.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bloque 3: Asistentes Virtuales y Móviles (Lucy) -->
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Interfaz Móvil</span>
+                <h3 class="text-3xl font-bold">Asistentes Virtuales Integrados</h3>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    Tu equipo digital operando en sintonía con las necesidades del entorno moderno. Lucy y los asistentes especializados gestionan citas de forma dinámica, reducen drásticamente el ausentismo y las cancelaciones imprevistas mediante recordatorios automatizados.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                        <p class="text-emerald-400 font-bold text-lg">24/7</p>
+                        <p class="text-xs text-gray-400">Atención continua sin interrupciones</p>
+                    </div>
+                    <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                        <p class="text-emerald-400 font-bold text-lg">-40%</p>
+                        <p class="text-xs text-gray-400">Reducción de ausentismo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl">
+                <img src="014 LUCY EN EL CELULAR.jpg" alt="Lucy en el Celular" class="w-full h-auto object-contain rounded-lg max-h-[500px]" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 014 LUCY EN EL CELULAR.jpg</div>'">
+            </div>
+        </div>
+
+        <!-- Bloque 4: Automatización y Flujos -->
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="feature-image-container p-3 rounded-2xl flex items-center justify-center shadow-2xl md:order-1">
+                <img src="04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg" alt="Flujos y Automatizaciones" class="w-full h-auto object-contain rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'py-24 text-center text-gray-500\'>Imagen: 04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg</div>'">
+            </div>
+            <div class="space-y-6 md:order-2">
+                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase">Optimización Operativa</span>
+                <h3 class="text-3xl font-bold">Flujos de Trabajo y Automatizaciones</h3>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    Menos tareas repetitivas y mayor margen para el valor humano. Sincronización avanzada con herramientas como Google Calendar, ejecución de seguimientos automáticos y generación de métricas analíticas sobre el rendimiento diario de la práctica.
+                </p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Sección Metodología -->
     <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="glass-card p-10 md:p-14 rounded-3xl">
             <h2 class="text-3xl font-bold mb-6 text-emerald-400">Metodología de Trabajo</h2>
-            <p class="text-gray-300 leading-relaxed text-lg">
-                Fusionamos la ingeniería de software de alto nivel con estrategias creativas de ejecución rápida (Vibe Coding). Cada solución está diseñada a la medida para garantizar un impacto profundo y sostenible.
+            <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                Fusionamos la ingeniería de software de alto nivel con estrategias creativas de ejecución rápida (Vibe Coding). Cada solución está diseñada a la medida para garantizar un impacto profundo, escalable y sostenible en el tiempo.
             </p>
         </div>
     </section>
 
-    <!-- Sección Galería (Espacio para tus 16 imágenes) -->
-    <section id="galeria" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-10 text-center">Nuestra Experiencia Visual</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Ejemplo de carga de imágenes (reemplaza 'foto-01.jpg' con los nombres reales de tus archivos subidos a GitHub) -->
-            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
-                <img src="foto-01.jpg" alt="Proyecto 1" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 01</span>'">
-            </div>
-            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
-                <img src="foto-02.jpg" alt="Proyecto 2" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 02</span>'">
-            </div>
-            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
-                <img src="foto-03.jpg" alt="Proyecto 3" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 03</span>'">
-            </div>
-            <div class="glass-card rounded-xl overflow-hidden h-48 flex items-center justify-center border border-white/10">
-                <img src="foto-04.jpg" alt="Proyecto 4" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-xs text-gray-500\'>Imagen 04</span>'">
-            </div>
-        </div>
-    </section>
-
     <!-- Sección Contacto -->
-    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center">
-        <div class="glass-card p-10 rounded-2xl">
-            <h2 class="text-3xl font-bold mb-6">Iniciemos tu Proyecto</h2>
-            <p class="text-gray-300 mb-6">Bogotá, Colombia | Atención exclusiva con cita previa</p>
-            <p class="text-emerald-400 font-mono text-lg mb-2">WhatsApp: +57 314 405 2859</p>
-            <p class="text-gray-400 font-mono">Email: nucleosonoro@gmail.com</p>
+    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center mb-16">
+        <div class="glass-card p-12 rounded-3xl shadow-2xl">
+            <h2 class="text-3xl font-bold mb-4">Iniciemos tu Proyecto</h2>
+            <p class="text-gray-300 mb-8">Bogotá, Colombia | Atención exclusiva con cita previa</p>
+            <p class="text-emerald-400 font-mono text-xl mb-2">WhatsApp: +57 314 405 2859</p>
+            <p class="text-gray-400 font-mono text-base">Email: nucleosonoro@gmail.com</p>
         </div>
     </section>
 
-    <!-- Scripts de Three.js y Vanta.js (Birds) -->
+    <!-- Scripts de Vanta y Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script>
@@ -130,7 +197,7 @@
           color1: 0x382e27,
           color2: 0x314f46,
           cohesion: 5.00
-        })
+        });
     </script>
 </body>
 </html>
