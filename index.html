@@ -23,19 +23,17 @@
             left: 0;
             z-index: -1;
         }
-        /* Tarjetas de vidrio con alta opacidad para proteger la lectura */
         .glass-card {
-            background: rgba(10, 14, 20, 0.85);
+            background: rgba(10, 14, 20, 0.88);
             backdrop-filter: blur(14px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
-        /* Sombras profundas para textos sobre fondos interactivos */
         .text-shadow-strong {
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
         }
         .image-box {
-            background: rgba(5, 8, 12, 0.9);
+            background: rgba(5, 8, 12, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
@@ -49,7 +47,6 @@
     <header class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Contenedor del Logo -->
                 <div class="h-12 w-12 rounded-xl bg-black/50 border border-emerald-500/30 flex items-center justify-center p-1 overflow-hidden shadow-inner">
                     <img src="logo.png" alt="Logo Núcleo Sonoro" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <span class="text-xs text-emerald-400 font-bold hidden">NS</span>
@@ -60,39 +57,90 @@
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
                 <a href="#inicio" class="hover:text-emerald-400 transition text-shadow-strong">Inicio</a>
-                <a href="#desarrollos" class="hover:text-emerald-400 transition text-shadow-strong">Desarrollos</a>
-                <a href="#metodologia" class="hover:text-emerald-400 transition text-shadow-strong">Metodología</a>
+                <a href="#fastweb" class="hover:text-emerald-400 transition text-shadow-strong">FastWeb</a>
+                <a href="#gbp" class="hover:text-emerald-400 transition text-shadow-strong">GBP & Tracción</a>
+                <a href="#desarrollos" class="hover:text-emerald-400 transition text-shadow-strong">Ecosistema IA</a>
                 <a href="#contacto" class="hover:text-emerald-400 transition text-shadow-strong">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Principal / Hero (Enfocada en Ventas, Marketing y Visibilidad) -->
+    <!-- Hero -->
     <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-24">
         <div class="max-w-4xl glass-card p-12 rounded-3xl">
             <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight text-white text-shadow-strong">
                 Potencia tus Ventas y Visibilidad con Inteligencia Artificial
             </h1>
             <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-medium text-shadow-strong">
-                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales y automatización comercial para escalar tu práctica profesional.
+                Desarrollo de soluciones tecnológicas avanzadas, agentes conversacionales, FastWebs de alto rendimiento y automatización comercial para escalar tu práctica profesional.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://wa.me/573144052859" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-2xl">
                     Agendar por WhatsApp
                 </a>
                 <a href="#desarrollos" class="glass-card hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl transition">
-                    Conocer Desarrollos
+                    Ver Desarrollos IA
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Ecosistema de Desarrollos -->
+    <!-- SECCIÓN FASTWEB: Pilar de Conversión -->
+    <section id="fastweb" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Estrategia Comercial 1</span>
+            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Infraestructura FastWeb</h2>
+            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Sitios ultrarrápidos diseñados específicamente para conversión, captura de prospectos y despliegue inmediato de agentes de inteligencia artificial.</p>
+        </div>
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white text-shadow-strong">Velocidad y Persuasión Comercial</h3>
+                <p class="text-gray-200 leading-relaxed text-base font-medium text-shadow-strong">
+                    Una FastWeb no es solo una página web; es el embudo principal donde convergen tus campañas de visibilidad. Integra flujos automáticos de contacto y estructuración limpia para que cada visitante se convierta en un paciente o cliente calificado sin fricciones.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-200 font-medium">
+                    <li class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">✔</span><span class="text-shadow-strong">Carga instantánea optimizada para SEO local y tráfico pago.</span></li>
+                    <li class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">✔</span><span class="text-shadow-strong">Diseño responsivo con enfoque absoluto en conversión y ventas.</span></li>
+                </ul>
+            </div>
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
+                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
+                    <img src="014 LUCY EN EL CELULAR.jpg" alt="Lucy en el Celular - FastWeb" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>014 LUCY EN EL CELULAR.jpg</div>'">
+                </div>
+                <p class="text-xs text-gray-400 text-center font-mono">Asset clave de interacción móvil en FastWeb</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GBP (Google Business Profile) -->
+    <section id="gbp" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Estrategia Comercial 2</span>
+            <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Optimización GBP (Google Business Profile)</h2>
+            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Dominio absoluto del posicionamiento local en Bogotá para captar clientes en el momento exacto en que buscan tus servicios profesionales.</p>
+        </div>
+        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
+            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
+                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
+                    <img src="04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg" alt="Flujos y Automatizaciones GBP" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg</div>'">
+                </div>
+                <p class="text-xs text-gray-400 text-center font-mono">Sincronización de flujos con tráfico local</p>
+            </div>
+            <div class="space-y-6 md:order-2">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white text-shadow-strong">Visibilidad y Reputación Local</h3>
+                <p class="text-gray-200 leading-relaxed text-base font-medium text-shadow-strong">
+                    El perfil optimizado en Google vincula la autoridad de tu práctica directamente con los canales automatizados. Maximizamos las reseñas, la interacción y las consultas directas hacia tu agenda conectada con agentes de inteligencia artificial.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSISTEMA DE DESARROLLOS IA (Integrando las imágenes clave con su relación de aspecto real y narrativa profunda) -->
     <section id="desarrollos" class="py-28 px-6 max-w-7xl mx-auto space-y-24">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl md:text-5xl font-black mb-4 text-emerald-400 text-shadow-strong">Ecosistema de Soluciones IA</h2>
-            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Cada módulo representa un pilar tecnológico diseñado con rigor para transformar la captación, la conversión y la gestión operativa.</p>
+            <p class="text-gray-200 text-lg font-medium text-shadow-strong">Desarrollos tecnológicos de vanguardia con sus respectivas arquitecturas visuales y operativas.</p>
         </div>
 
         <!-- Módulo 1: Agentes de IA -->
@@ -103,32 +151,22 @@
                 <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
                     Sistemas inteligentes diseñados para analizar, aprender y optimizar cada interacción crítica orientada a la conversión. Capaces de consultar disponibilidad en tiempo real, gestionar agendas autónomamente y registrar con precisión toda la trazabilidad comercial.
                 </p>
-                <ul class="space-y-3 text-sm text-gray-200 font-medium">
-                    <li class="flex items-center space-x-3">
-                        <span class="text-emerald-400 font-bold">✔</span> 
-                        <span class="text-shadow-strong">Toma de decisiones inteligentes con base en datos de conversión.</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <span class="text-emerald-400 font-bold">✔</span> 
-                        <span class="text-shadow-strong">Detección proactiva de oportunidades de optimización en ventas.</span>
-                    </li>
-                </ul>
             </div>
             <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
-                <div class="rounded-xl overflow-hidden border border-white/10">
-                    <img src="06 AGENTES DE IA CON ODONTOLOGO.jpg" alt="Agentes de IA con Odontólogo" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 06 AGENTES DE IA CON ODONTOLOGO.jpg</div>'">
+                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
+                    <img src="06 AGENTES DE IA CON ODONTOLOGO.jpg" alt="06 AGENTES DE IA CON ODONTOLOGO.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>06 AGENTES DE IA CON ODONTOLOGO.jpg</div>'">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">Arquitectura operativa y supervisión comercial</p>
+                <p class="text-xs text-gray-400 text-center font-mono">06 AGENTES DE IA CON ODONTOLOGO.jpg</p>
             </div>
         </div>
 
         <!-- Módulo 2: IA Conversacional -->
         <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
             <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
-                <div class="rounded-xl overflow-hidden border border-white/10">
-                    <img src="016 IA CONVERSACIONAL CON DOCTORA.jpg" alt="IA Conversacional con Doctora" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 016 IA CONVERSACIONAL CON DOCTORA.jpg</div>'">
+                <div class="rounded-xl overflow-hidden border border-white/10 flex items-center justify-center min-h-[300px]">
+                    <img src="016 IA CONVERSACIONAL CON DOCTORA.jpg" alt="016 IA CONVERSACIONAL CON DOCTORA.jpg" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>016 IA CONVERSACIONAL CON DOCTORA.jpg</div>'">
                 </div>
-                <p class="text-xs text-gray-400 text-center font-mono">Atención comercial y captación multicanal 24/7</p>
+                <p class="text-xs text-gray-400 text-center font-mono">016 IA CONVERSACIONAL CON DOCTORA.jpg</p>
             </div>
             <div class="space-y-6 md:order-2">
                 <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Disponibilidad Comercial</span>
@@ -139,53 +177,19 @@
             </div>
         </div>
 
-        <!-- Módulo 3: Asistentes Virtuales (Lucy) -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-6">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Interfaz Móvil</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Asistentes Virtuales Integrados</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    Tu equipo comercial operando en sintonía con las necesidades del entorno digital. Lucy y los asistentes especializados gestionan prospectos de forma dinámica y aseguran el seguimiento continuo para maximizar el cierre de citas.
-                </p>
-            </div>
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4">
-                <div class="rounded-xl overflow-hidden border border-white/10">
-                    <img src="014 LUCY EN EL CELULAR.jpg" alt="Lucy en el Celular" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 014 LUCY EN EL CELULAR.jpg</div>'">
-                </div>
-                <p class="text-xs text-gray-400 text-center font-mono">Gestión móvil orientada a conversión y ventas</p>
-            </div>
-        </div>
-
-        <!-- Módulo 4: Automatización y Flujos -->
-        <div class="glass-card p-8 md:p-14 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
-            <div class="image-box p-4 rounded-2xl shadow-2xl flex flex-col gap-4 md:order-1">
-                <div class="rounded-xl overflow-hidden border border-white/10">
-                    <img src="04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg" alt="Flujos y Automatizaciones" class="w-full h-auto object-contain max-h-[380px] mx-auto" onerror="this.parentElement.innerHTML='<div class=\'py-16 text-center text-gray-400 text-sm\'>Imagen: 04 FLUJOS Y AUTOMATIZACIONES CON DOCTOR.jpg</div>'">
-                </div>
-                <p class="text-xs text-gray-400 text-center font-mono">Embudos de marketing y sincronización comercial</p>
-            </div>
-            <div class="space-y-6 md:order-2">
-                <span class="text-emerald-400 font-mono text-sm tracking-widest uppercase font-bold">Optimización de Embudo</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white text-shadow-strong">Flujos de Trabajo y Automatizaciones</h3>
-                <p class="text-gray-200 leading-relaxed text-base md:text-lg font-medium text-shadow-strong">
-                    Menos fricción operativa y mayor tracción en ventas. Sincronización avanzada con plataformas de captación, ejecución de seguimientos automáticos y analítica de rendimiento para escalar la visibilidad del negocio.
-                </p>
-            </div>
-        </div>
-
     </section>
 
-    <!-- Sección Metodología -->
+    <!-- Metodología -->
     <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="glass-card p-10 md:p-14 rounded-3xl">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-400 text-shadow-strong">Metodología de Trabajo</h2>
             <p class="text-gray-200 leading-relaxed text-lg font-medium text-shadow-strong">
-                Fusionamos la ingeniería de software de alto nivel con estrategias de marketing y ejecución rápida (Vibe Coding). Cada solución está orientada a resultados comerciales medibles y un crecimiento escalable.
+                Fusionamos la ingeniería de software de alto nivel con estrategias de marketing, FastWeb y GBP de ejecución rápida (Vibe Coding). Cada solución está orientada a resultados comerciales medibles y un crecimiento escalable.
             </p>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
+    <!-- Contacto -->
     <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto text-center mb-16">
         <div class="glass-card p-12 rounded-3xl shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-shadow-strong">Iniciemos tu Proyecto</h2>
